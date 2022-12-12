@@ -1,0 +1,125 @@
+<%- include ('includes/head') %>
+<%- include ('includes/nav') %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-2"></div>
+
+    <div class="col-lg-8 my-3">
+      <h1 >IDENTIFICAÇÃO DA ENTIDADE / AGRICULTOR</h1>
+
+      
+<%- include('includes/messages') %>
+
+<% if(contato._id) { %> 
+<form action="/contato/edit/<%= contato._id %>" method="POST" class="needs-validation" novalidate>
+  <% } else { %> 
+    <form action="/contato/register" method="POST" class="needs-validation" novalidate> 
+  <% } %> 
+  <input type="hidden" name="_csrf" value=<%= csrfToken %>>
+
+  <div class="row d-flex m-2 ">
+    <div class="col-md-6 cadastroColunas">
+       <div class="form-group col-md-8">
+          <div class="form-group ">
+             <label for="cnpjCpf">CNPJ / CPF:*</label>
+             <input value="<%= contato.cnpjCpf %>" type="text" class="form-control" id="cnpjCpf" name="cnpjCpf" required >
+          </div>
+          <label for="nome">Nome:*</label>
+          <input type="text" value="<%= contato.nome %>" class="form-control" id="nome" name="nome" required>
+          <div class="valid-tooltip">
+            validado!
+          </div>
+          <div class="invalid-tooltip">
+            Favor coloque um nome!
+          </div>
+          <label for="dataDeNascimento">Data de Nascimento:</label>
+          <input type="text" value="<%= contato.dataDeNascimento %>" class="form-control" id="dataDeNascimento"  name="dataDeNascimento">
+
+          <label for="rg">Rg:</label>
+          <input type="text"value="<%= contato.rg %>" class="form-control" id="rg" name="rg">
+
+          <label for="endereco">Endereço:*</label>
+          <input type="text" value="<%= contato.endereco %>" class="form-control" id="endereco" name="endereco" required>
+
+          <label for="inscricaoEstadual">Inscrição Estadual:*</label>
+          <input type="text" value="<%= contato.inscricaoEstadual %>" class="form-control" id="inscricaoEstadual" name="inscricaoEstadual">
+
+          <label for="email">Email:</label>
+          <input type="email" value="<%= contato.email %>" class="form-control" id="email" name="email">
+
+          <label for="telefone">Telefone*:</label>
+          <input type="text" value="<%= contato.telefone %>" class="form-control" id="telefone" name="telefone" required>
+
+          <label for="cnae">CNAE:</label>
+          <input type="text" value="<%= contato.cnae %>" class="form-control" id="cnae" name="cnae" >
+       </div>
+    </div>
+    <div class="col-md-6">
+       <div class="form-group col-md-8 cadastroColunas">
+
+          <label for="cnpjMatriz">CNPJ da matriz:</label>
+          <input type="text" value="<%= contato.cnpjMatriz %>" class="form-control" id="cnpjMatriz" name="cnpjMatriz" >
+
+          <label for="nomeFantasia">Nome Fantasia:</label>
+          <input type="text" value="<%= contato.nomeFantasia %>" class="form-control" id="nomeFantasia"  name="nomeFantasia">
+
+          <label for="nomePresidente">Nome do Presidente:</label>
+          <input type="text" value="<%= contato.nomePresidente %>" class="form-control" id="nomePresidente"  name="nomePresidente">
+
+          <label for="numeroDaPasta">Numero da Pasta*:</label>
+          <input type="text" value="<%= contato.numeroDaPasta %>" class="form-control" id="numeroDaPasta" name="numeroDaPasta" required >
+
+          <label for="dataDeVisita">Data de visita:</label>
+          <input type="text" value="<%= contato.dataDeVisita %>" class="form-control" id="dataDeVisita"  name="dataDeVisita" required>
+
+          <label for="dataDeAbertura">Data de abertura:</label>
+          <input type="text" value="<%= contato.dataDeAbertura %>" class="form-control" id="dataDeAbertura" name="dataDeAbertura">
+
+          <label for="dataMandato">Data do mandatado:</label>
+          <input type="text" value="<%= contato.dataMandato %>" class="form-control" id="dataMandato" name="dataMandato">
+
+          <label for="numero">Numero:</label>
+          <input type="text" value="<%= contato.numero %>" class="form-control" id="numero" name="numero">
+
+          <label for="cep">Cep:</label>
+          <input type="text" value="<%= contato.cep %>" class="form-control" id="cep" name="cep">
+       </div>
+    </div>
+    <div class="col-md-12 dadosDaInscricao mt-5 ">
+       <h1>DADOS DA INSCRIÇÃO</h1>
+       <h4 class="m-3">Entidade possui inscrição de programas em outro conselho?</h4>
+       <div class="form-group form-check formCheckConselhos">
+         <label class="form-check-label" for="cmca">Conselho Municipal de direitos da criança e adolescente</label>
+          <input type="checkbox" class="form-check-input" id="cmca" value="adolescente" name="adolescente">
+       </div>
+       <div class="form-group form-check formCheckConselhos">
+         <label class="form-check-label" for="cmpi">Conselho Municipal de direitos da pessoa idosa</label>
+          <input type="checkbox" class="form-check-input" id="cmpi" value="idoso" name="idoso">
+       </div>
+    </div>
+    <div class="col-md-12 dadosFinanceiros">
+       <h1>DADOS FINANCEIROS</h1>
+       <div class="form-group col-md-8">
+          <label for="receitaTotal">Valor da receita total da entidade:</label>
+          <input type="text" value="<%= contato.receitaTotal %>" class="form-control" id="receitaTotal" name="receitaTotal">
+
+          <label for="fontesDeFinanciamento">Indique as principais fontes de financiamento da entidade:</label>
+          <input type="text" value="<%= contato.fontesDeFinanciamento %>" class="form-control" id="fontesDeFinanciamento" name="fontesDeFinanciamento">
+       </div>
+    </div>
+    <div class="botoes">
+       <button type="submit" class="btn btn-primary col-md-3 mt-3 botaoCadastro">Salvar</button>
+       <button class="btn btn-primary col-md-3 mt-3 botaoCadastro" value="Cancel">Cancelar</button>
+    </div>
+</form>
+
+
+</div>
+
+    <div class="col-lg-2"></div>
+  </div>
+</div>
+
+
+<%- include('includes/footer') %>

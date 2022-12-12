@@ -1,0 +1,73 @@
+<%- include ('includes/head')%>
+<%- include ('includes/nav')%>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-2"></div>
+
+    <div class="container containerBuscar">
+      <h1>Buscar Entidade / Agricultor</h1>
+      <div class="row d-flex ">
+         <div class="col-md-6 cadastroColunas">
+            <div class="form-group col-md-8">
+               <label for="cnpj">CPNJ/CPF:</label>
+               <input type="text" class="form-control" id="cnpj" >
+               <label for="cnpj">NOME:</label>
+               <input type="text" class="form-control" id="cnpj" >
+            </div>
+         </div>
+         <div class="col-md-12 statusBusca">
+            <div class="form-group form-check">
+               <input type="checkbox" class="form-check-input" id="statusComInscricao">
+               <label class="form-check-label" for="statusComInscricao">Com inscrição</label>
+            </div>
+            <div class="form-group form-check">
+               <input type="checkbox" class="form-check-input" id="statusPendente">
+               <label class="form-check-label" for="statusPendente">Pendente</label>
+            </div>
+            <div class="form-group form-check">
+               <input type="checkbox" class="form-check-input" id="statusExcluido">
+               <label class="form-check-label" for="statusExcluido">Excluído</label>
+            </div>
+         </div>
+      </div>
+      <button type="submit" class="btn btn-primary col-md-2" onclick="buscar()">Pesquisar</button>
+      <button type="submit" class="btn btn-primary col-md-2">Cancelar</button>
+   </div>
+
+<%- include('includes/messages')%>
+<% if(contatos.length > 0 ) { %> 
+      <div class="responsive-table">
+        <table class="table my-3">
+          <thead>
+            <tr>
+               <th scope="col">Nome:</th>
+               <th scope="col">Cpf:</th>
+               <th scope="col">Nome Fantasia:</th>
+               <th scope="col">CNPJ:</th>
+               <th scope="col">Visita:</th>
+               <th scope="col" colspan="2">status:</th>
+               <th scope="col" >Config:</th>
+            </tr>
+          <% contatos.forEach(contato => { %>
+            <tr>
+              <td><%= contato.nome %> </td>
+              <td><%= contato.cpf %> </td>
+              <td><%= contato.nomeFantasia %> </td>
+              <td><%= contato.cpnj %> </td>
+              <td><%= contato.statusDeVisita %> </td>
+              <td><%= contato.dataDeVisita %> </td>
+              <td><a href="/contato/index/<%= contato._id %> ">Editar</td>
+              <td><a class="text-danger" href="/contato/delete/<%= contato._id %> ">Excluir</td>
+            </tr>
+          <% }); %> 
+        </table>
+      </div>
+    </div>
+<% } else { %>
+  <p class="text-center p-5 mb-2 bg-secondary text-white">Não existe cadastro no banco de dados!</p> 
+<% } %> 
+    <div class="col-lg-2"></div>
+  </div>
+</div>
+
+<%- include ('includes/footer')%>

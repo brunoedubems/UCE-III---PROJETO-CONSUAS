@@ -1,0 +1,270 @@
+
+/* navbar */
+label{
+  font-size: 20px;
+}
+.navmenu, .login{
+  background-image: linear-gradient(#CE9FFC, #7367F0);
+  list-style-type: none;
+  display: flex;
+  align-items: flex-end;
+  
+}
+
+.icone{
+  max-width: 350px;
+
+}
+  .nav-link{
+    font-size: 20px;
+  }
+  
+  .nav-link.active{
+    font-weight: bold;
+  }
+  
+  .blocos{
+    display: flex;
+    align-items: center;
+  }
+  
+  .containerBlocos{
+    border: 2px solid rgba(2,7,10,0.58);
+    border-radius: 10px;
+  }
+
+  .totalQuantidade{
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+  }
+  
+
+
+  
+  /*CADASTRO*/
+  .cadastroColunas label{
+  margin-top: 20px;
+  }
+  
+  .dadosDaInscricao{
+    padding: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .container h1, .dadosDaInscricao h1{
+    margin-top: 10px;
+    text-align: center;
+  
+  }
+  
+  .formCheckConselhos{
+  padding: 10px;
+  
+  }
+  
+  .dadosFinanceiros{
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .dadosFinanceiros label{
+    margin-top: 20px;
+  }
+  
+  .botaoCadastro{
+  margin: 0 20px;
+  padding: 10px;
+  
+  }
+  
+  .botoes{
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+  }
+  
+  
+  
+  /*PESQUISAR*/
+  
+  .statusBusca{
+    margin: 10px;
+  }
+  
+    body {
+      font-family: "Poppins", sans-serif;
+      height: 100vh;
+    }
+    
+    a {
+      color: #92badd;
+      display:inline-block;
+      text-decoration: none;
+      font-weight: 400;
+    }
+    
+    
+
+    /* STRUCTURE */
+    
+    .containnerMenu {
+      display: flex;
+      align-items: center;
+      flex-direction: column; 
+      justify-content: center;
+      width: 100%;
+      min-height: 100%;
+      padding: 20px;
+    }
+    
+    #formContent {
+      -webkit-border-radius: 10px 10px 10px 10px;
+      border-radius: 10px 10px 10px 10px;
+      background: #fff;
+      padding: 30px;
+      width: 90%;
+      max-width: 450px;
+      position: relative;
+      padding: 0px;
+      -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+      box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+      text-align: center;
+    }
+    
+    #formFooter {
+      background-color: #f6f6f6;
+      border-top: 1px solid #dce8f1;
+      padding: 25px;
+      text-align: center;
+      -webkit-border-radius: 0 0 10px 10px;
+      border-radius: 0 0 10px 10px;
+    }
+    
+  
+  
+  
+    .containnerMenu {
+      display: flex;
+      align-items: center;
+      flex-direction: column; 
+      justify-content: center;
+      width: 100%;
+      min-height: 100%;
+      padding: 20px;
+    }
+    
+    #formContent {
+      -webkit-border-radius: 10px 10px 10px 10px;
+      border-radius: 10px 10px 10px 10px;
+      background: #fff;
+      padding: 30px;
+      width: 90%;
+      max-width: 450px;
+      position: relative;
+      padding: 0px;
+      -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+      box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+      text-align: center;
+    }
+   
+    
+  
+ 
+  
+  /* STRUCTURE */
+  
+  .containnerMenu {
+    display: flex;
+    align-items: center;
+    flex-direction: column; 
+    justify-content: center;
+    width: 100%;
+    min-height: 100%;
+    padding: 20px;
+  }
+  
+  #formContent {
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border-radius: 10px 10px 10px 10px;
+    background: #fff;
+    padding: 30px;
+    width: 90%;
+    max-width: 450px;
+    position: relative;
+    padding: 0px;
+    -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+    box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+    text-align: center;
+  }
+  
+  #formFooter {
+    background-color: #f6f6f6;
+    border-top: 1px solid #dce8f1;
+    padding: 25px;
+    text-align: center;
+    -webkit-border-radius: 0 0 10px 10px;
+    border-radius: 0 0 10px 10px;
+  }
+  
+
+  
+  /* FORM TYPOGRAPHY*/
+  
+  .botaoLogin  {
+    background-color: #44da3f;
+    border: none;
+    color: white;
+    padding: 15px 80px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 13px;
+    border-radius: 5px 5px 5px 5px;
+    margin: 15px 20px 40px 20px;
+  }
+  
+  .botaoLogin:hover  {
+    background-color: #e73939;
+  }
+  
+  
+  .inputLogin, .inputSenha{
+    background-color: #D9E5F4;
+    border: none;
+    color: #0d0d0d;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 5px;
+    width: 85%;
+    border: 2px solid #f6f6f6;
+    transition: all 0.5s ease-in-out;
+
+    border-radius: 5px 5px 5px 5px;
+  }
+  
+  .inputLogin:focus, .inputSenha:focus {
+    background-color: #fff;
+    border-bottom: 2px solid #5fbae9;
+  }
+  
+  .inputLogin:placeholder, .inputSenha:placeholder {
+    color: #cccccc;
+  }
+  
+  
+  /* OTHERS */
+  
+  *:focus {
+      outline: none;
+  } 
+  
+  #logo {
+    width:60%;
+    margin: 30px;
+  }
